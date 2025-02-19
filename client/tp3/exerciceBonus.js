@@ -36,7 +36,9 @@ class Auteur extends Personne {
 
   // méthode pour lister les livres d'un auteur
   listeLivresEcrites(bibliotheque) {
-    //
+    // liste des livres de la bibliotheque
+    const livres = bibliotheque.listeLivres;
+    return livres.filter((livre) => livre.auteurs.includes(this.matricule));
   }
 }
 
@@ -46,7 +48,6 @@ class Abonne extends Personne {
     super(nom, prenom, dateNaiss);
     this.matricule = matricule;
     this.email = email;
-    this.listeEmprunts = [];
   }
 
   // Polymorphisme
@@ -62,17 +63,42 @@ class Abonne extends Personne {
 
   // méthode pour emprunter un livre
   emprunterLivre(livre, bibliotheque) {
-    //
+    if (livre.estDisponible()) {
+      // création d'un objet Emprunt
+      const emprunt = new Emprunt(livre, this);
+
+      // ajout de l'emprunt dans la liste de emprunts
+      bibliotheque.listeEmprunts.push(emprunt);
+
+      // Mise à jour de la quantité disponible (décrémentation)
+      livre.qteDispo--;
+    } else {
+      console.error("Emprunt impossible, ce livre n'est pas disponible");
+    }
   }
 
   // méthode pour rendre un livre
   rendreLivre(livre, bibliotheque) {
-    //
+    const index = bibliotheque.listeEmprunts.findIndex((emp) => emp.livre.isbn === livre.isbn);
+    if (index !== -1) {
+      // ajout de la date de retour du livre
+      bibliotheque.listeEmprunts[index].dateRetour = new Date();
+
+      // Mise à joyr de la quantité disponible (incrémentation)
+      livre.qteDispo++;
+    } else {
+      console.error("Emprunt introuvable");
+    }
   }
 
   // méthode pour afficher les livres emprunter d'un abonné
-  afficherLivresEmpruntes() {
-    //
+  afficherLivresEmpruntes(bibliotheque) {
+    const listeEmpruntsAbonne = bibliotheque.listeEmprunts.filter((e) => e.abonne.matricule === this.matricule);
+
+    console.log(`\n********* Livres empruntés par ${this.prenom} ${this.nom} (${this.matricule}) *********`);
+    if (listeEmpruntsAbonne.length) console.table(listeEmpruntsAbonne);
+    else console.log("Aucun emprunt trouvé pour cet abonné !");
+    console.log("*****************************************************************************************");
   }
 }
 
@@ -98,7 +124,7 @@ class Livre {
 
   // méthode pour vérifier la disponibilité
   estDisponible() {
-    //
+    return this.qteDispo > 0;
   }
 }
 
@@ -122,7 +148,18 @@ class Emprunt {
 
   // méthode pour vérifier si un livre emprunter est est en retard
   estEnRetard() {
-    //
+    // Durée d'emprunt autorisée : 15 jours
+    const dureeAutorisee = 15;
+
+    // Date actuelle si l'emprunt n'a pas encore été retourné
+    const dateDeReference = this.dateRetour ? this.dateRetour : new Date();
+
+    // Calcul de la différence en jours entre la date d'emprunt et la date de retour ou aujourd'hui
+    const differenceEnMillisecondes = dateDeReference - this.dateEmprunt;
+    const differenceEnJours = differenceEnMillisecondes / (1000 * 60 * 60 * 24);
+
+    // Retourne true si la durée dépasse 15 jours
+    return differenceEnJours > dureeAutorisee;
   }
 }
 
