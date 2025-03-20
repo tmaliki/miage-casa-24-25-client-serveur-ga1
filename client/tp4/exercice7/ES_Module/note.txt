@@ -1,0 +1,9 @@
+### Pour Initialiser d'un projet node.js
+$ npm init
+$ # OR
+$ npm init -y
+$
+
+### Pour Installer les packages d'un projet node.js
+$ npm install
+$
