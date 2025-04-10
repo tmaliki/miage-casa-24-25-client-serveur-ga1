@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice 5 - TP5</title>
+  </head>
+  <body>
+    <h1>Exercice 5 - TP5</h1>
+
+    <form onsubmit="return verifyForm()">
+      <div>
+        <label for="nom">Nom :</label><br />
+        <input type="text" name="nom" id="nom" /><br />
+        <span id="msgErrNom" style="color: red"></span>
+      </div>
+      <br /><br />
+
+      <div>
+        <label for="prenom">Préom :</label><br />
+        <input type="text" name="prenom" id="prenom" /><br />
+        <span id="msgErrPrenom" style="color: red"></span>
+      </div>
+      <br /><br />
+
+      <div>
+        <label for="email">Email :</label><br />
+        <input type="email" name="email" id="email" /><br />
+        <span id="msgErrEmail" style="color: red"></span>
+      </div>
+      <br /><br />
+
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
