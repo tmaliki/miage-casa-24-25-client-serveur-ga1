@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice 12 - TP5</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Exercice 12 - TP5</h1>
+
+    <h2>Quiz Javascript</h2>
+
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Quel mot-clé déclare une constante ?</p>
+        <input type="radio" name="q1" value="const" /> const<br />
+        <input type="radio" name="q1" value="var" /> var<br />
+        <input type="radio" name="q1" value="let" /> let<br />
+        <input type="radio" name="q1" value="int" /> int<br />
+      </div>
+
+      <div class="question">
+        <p>2. Quelle méthode convertit une chaîne en majuscules ?</p>
+        <input type="radio" name="q2" value="toLowerCase" /> toLowerCase<br />
+        <input type="radio" name="q2" value="toupperCase" /> touppercase<br />
+        <input type="radio" name="q2" value="toUpperCase" /> toUpperCase<br />
+        <input type="radio" name="q2" value="toUpperLowerCase" /> toUpperLowerCase<br />
+      </div>
+
+      <div class="question">
+        <p>3. Que retourne typeof [] ?</p>
+        <input type="radio" name="q3" value="object" /> object<br />
+        <input type="radio" name="q3" value="array" /> array<br />
+        <input type="radio" name="q3" value="string" /> string<br />
+        <input type="radio" name="q3" value="boolean" /> boolean<br />
+      </div>
+
+      <div class="question">
+        <p>4. Comment écrire un commentaire sur une ligne ?</p>
+        <input type="radio" name="q4" value="//" /> // <br />
+        <input type="radio" name="q4" value="/* */" /> /* */ <br />
+        <input type="radio" name="q4" value="{** **}" /> {** **} <br />
+        <input type="radio" name="q4" value="/*-- */" /> /*-- */ <br />
+      </div>
+
+      <div class="question">
+        <p>5. Quelle méthode ajoute un élément en fin de tableau ?</p>
+        <input type="radio" name="q5" value="push" /> push<br />
+        <input type="radio" name="q5" value="splice" /> splice<br />
+        <input type="radio" name="q5" value="pop" /> pop<br />
+        <input type="radio" name="q5" value="unshift" /> unshift<br />
+      </div>
+
+      <button type="submit">Valider</button>
+    </form>
+
+    <div class="result" id="resultat"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

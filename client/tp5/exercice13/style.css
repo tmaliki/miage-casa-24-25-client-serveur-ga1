@@ -1,0 +1,23 @@
+#container {
+  width: 80%;
+  background-color: #eee;
+  border-radius: 25px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+#barre {
+  width: 0%;
+  height: 30px;
+  background-color: #4caf50;
+  text-align: center;
+  color: white;
+  line-height: 30px;
+  transition: width 0.4s ease;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+}

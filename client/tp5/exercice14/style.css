@@ -1,0 +1,25 @@
+body {
+  background-color: #282c34;
+  color: #61dafb;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px #000;
+}
+
+#horloge {
+  font-size: 60px;
+  background-color: #20232a;
+  padding: 30px 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #61dafb;
+}

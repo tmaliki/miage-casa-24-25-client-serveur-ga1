@@ -1,0 +1,31 @@
+.carousel {
+  width: 720px;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
