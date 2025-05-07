@@ -6,8 +6,14 @@ $ npm init -y
 ### Installation des packages dans un projet node
 $ npm install
 
+## Pour lancer l'environnement de devéloppement d'un projet node
+$ npm start
+
 ### Installation de la librairie bootstrap
 $ npm install bootstrap
 
 ### Installation de framework express.js
 $ npm install express
+
+### Installation du package nodemon en mode developpement
+$ npm install --save-dev nodemon
