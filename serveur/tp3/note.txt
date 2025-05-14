@@ -17,3 +17,10 @@ $ npm install express
 
 ### Installation du package nodemon en mode developpement
 $ npm install --save-dev nodemon
+
+### Installation des dépendances de l'exercice 7
+$ npm init -y
+$ npm install express mysql2 dotenv
+$ npm install jsonwebtoken bcryptjs
+$ npm install --save-dev nodemon
+$
